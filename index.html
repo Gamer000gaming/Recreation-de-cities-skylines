@@ -4,32 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jeu de Simulation de Ville</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
-    <script src="script.js" defer></script>
     <style>
-        body { display: flex; justify-content: center; align-items: center; background: #333; }
-        #game-container { width: 800px; height: 700px; }
-        canvas { border: 2px solid #555; }
-        #toolbar { display: flex; justify-content: space-around; background: #777; padding: 10px; }
-        .button { background: #ccc; border: 1px solid #555; padding: 10px; cursor: pointer; }
+        canvas {
+            border: 1px solid black;
+        }
+        #toolbar, #info-bar {
+            display: flex;
+            justify-content: space-around;
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            font-size: 14px;
+        }
+        .button {
+            background: #555;
+            color: #fff;
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
-    <div id="game-container">
-        <div id="toolbar">
-            <div class="button" onclick="selectBuilding('Route')">Route ($10)</div>
-            <div class="button" onclick="selectBuilding('Maison')">Maison ($50)</div>
-            <div class="button" onclick="selectBuilding('Usine')">Usine ($100)</div>
-            <div class="button" onclick="selectBuilding('Centrale')">Centrale ($200)</div>
-            <div class="button" onclick="selectBuilding('Magasin')">Magasin ($50)</div>
-            <div class="button" onclick="selectBuilding('Aéroport')">Aéroport ($100)</div>
-        </div>
-        <div id="info-bar">
-            <p>Argent: <span id="money">500</span></p>
-            <p>Population: <span id="population">0</span></p>
-            <p>Revenu: <span id="income">0</span></p>
-            <p>Energie: <span id="energy">200</span></p>
-        </div>
+    <div id="toolbar">
+        <button class="button" onclick="selectBuilding('Route')">Route ($10)</button>
+        <button class="button" onclick="selectBuilding('Maison')">Maison ($50)</button>
+        <button class="button" onclick="selectBuilding('Usine')">Usine ($100)</button>
+        <button class="button" onclick="selectBuilding('Centrale')">Centrale ($200)</button>
+        <button class="button" onclick="selectBuilding('Magasin')">Magasin ($50)</button>
+        <button class="button" onclick="selectBuilding('Aéroport')">Aéroport ($100)</button>
     </div>
+    <div id="info-bar">
+        <span id="money">Argent: $500</span>
+        <span id="population">Population: 0</span>
+        <span id="income">Revenu: $0</span>
+        <span id="energy">Énergie: 200</span>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script src="game.js"></script>
 </body>
-</html>
+</html> 
