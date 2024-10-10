@@ -78,7 +78,6 @@ function mousePressed() {
             if (selectedBuilding === "Maison") {
                 city.population += 5;
             }
-            updateInfoBar();
         }
     }
 }
@@ -94,8 +93,3 @@ function drawInfoBar() {
     document.getElementById('income').textContent = `Revenu: $${city.income}`;
     document.getElementById('energy').textContent = `Énergie: ${city.resources.electricity}`;
 }
-
-function updateInfoBar() {
-    city.income = city.population * 5;
-    city.money += city.income;
-} 
