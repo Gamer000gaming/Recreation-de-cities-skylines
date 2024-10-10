@@ -30,6 +30,18 @@ function setup() {
             city.grid[x][y] = null;
         }
     }
+
+    // Mettre à jour les revenus toutes les 5 secondes
+    setInterval(updateIncome, 5000);
+}
+
+function updateIncome() {
+    // Calculer le revenu total basé sur la population
+    city.income = city.population * 5; // Chaque personne génère un revenu de $5
+    city.money += city.income;
+
+    // Mettre à jour l'affichage
+    updateInfoBar();
 }
 
 function draw() {
